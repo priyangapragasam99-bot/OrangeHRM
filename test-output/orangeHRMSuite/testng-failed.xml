@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [orangeHRMSuite]">
+  <test thread-count="5" name="orangeHRMTest(failed)">
+    <classes>
+      <class name="orangeHRM.dummyClass">
+        <methods>
+          <include name="dummy"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="loadConfig"/>
+        </methods>
+      </class> <!-- orangeHRM.dummyClass -->
+      <class name="orangeHRM.dummyClass2">
+        <methods>
+          <include name="dummy"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="loadConfig"/>
+        </methods>
+      </class> <!-- orangeHRM.dummyClass2 -->
+    </classes>
+  </test> <!-- orangeHRMTest(failed) -->
+</suite> <!-- Failed suite [orangeHRMSuite] -->
