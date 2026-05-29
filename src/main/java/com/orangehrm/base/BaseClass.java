@@ -20,7 +20,7 @@ public class BaseClass {
 	protected static Properties prop;
 	protected static WebDriver driver;
 
-	@BeforeSuite
+	@BeforeSuite(alwaysRun = true)
 	// load the configuration file
 	public void loadConfig() throws IOException {
 		prop = new Properties();
@@ -28,7 +28,7 @@ public class BaseClass {
 		prop.load(fis);
 	}
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void setUp() throws IOException {
 
 		System.out.println("SettingUp WebDriver:" + this.getClass().getSimpleName());
@@ -96,8 +96,19 @@ public class BaseClass {
 	{
 		this.driver = driver;
 	}
+	
+	//navigate Back
+		public void browserBackNavigation()
+		{
+			try {
+				driver.navigate().back();
+			} catch (Exception e) {
+				
+				System.out.println("Navigate the browser backward : " + e.getMessage());
+			}
+		}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
 		if (driver != null) {
 			try {

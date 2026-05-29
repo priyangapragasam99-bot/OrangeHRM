@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="orangeHRMSuite">
+
+	<!-- Regression test only -->
+	<test name="Regression">
+		<groups>
+			<run>
+				<include name="Regression" />
+			</run>
+
+		</groups>
+		<classes>
+			<class name="orangeHRM.LoginPageTest"></class>
+			<class name="orangeHRM.employeeManagement"></class>
+		</classes>
+
+	</test>
+</suite>

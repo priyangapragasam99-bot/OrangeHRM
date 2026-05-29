@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [orangeHRMSuite]">
-  <test thread-count="5" name="orangeHRMTest(failed)">
+  <test thread-count="5" name="Smoke(failed)">
+    <groups>
+      <run>
+        <include name="Smoke"/>
+      </run>
+    </groups>
     <classes>
-      <class name="orangeHRM.dummyClass">
+      <class name="orangeHRM.LoginPageTest">
         <methods>
-          <include name="dummy"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="loadConfig"/>
+          <include name="verifyValidLoginTest"/>
+          <include name="emptyPassword"/>
+          <include name="invalidPassword"/>
+          <include name="emptyUserName"/>
+          <include name="setupPages"/>
+          <include name="browserBackAfterLogout"/>
+          <include name="resetPassword"/>
         </methods>
-      </class> <!-- orangeHRM.dummyClass -->
-      <class name="orangeHRM.dummyClass2">
+      </class> <!-- orangeHRM.LoginPageTest -->
+      <class name="orangeHRM.employeeManagement">
         <methods>
-          <include name="dummy"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="loadConfig"/>
+          <include name="addNewEmployee"/>
+          <include name="setupPages"/>
         </methods>
-      </class> <!-- orangeHRM.dummyClass2 -->
+      </class> <!-- orangeHRM.employeeManagement -->
     </classes>
-  </test> <!-- orangeHRMTest(failed) -->
+  </test> <!-- Smoke(failed) -->
 </suite> <!-- Failed suite [orangeHRMSuite] -->

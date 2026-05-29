@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="orangeHRMSuite">
+
+	<!-- Smoke test only -->
+	<test name="Smoke">
+		<groups>
+			<run>
+				<include name="Smoke" />
+			</run>
+
+		</groups>
+		<classes>
+			<class name="orangeHRM.LoginPageTest"></class>
+			<class name="orangeHRM.employeeManagement"></class>
+		</classes>
+	</test>
+
+</suite>

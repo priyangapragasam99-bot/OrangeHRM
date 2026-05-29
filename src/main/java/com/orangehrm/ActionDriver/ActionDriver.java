@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.orangeHRM.base.BaseClass;
@@ -22,6 +23,16 @@ public class ActionDriver {
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	}
 
+	public void DropDown(By by, String dropDownValue)
+	{
+		try {
+			Select s = new Select(driver.findElement(by));
+			s.deselectByValue(dropDownValue);
+		} catch (Exception e) {
+			System.out.println("unable to find on dropdown :" + e.getMessage());
+		}
+	}
+	
 	// method to click an element
 	public void click(By by) {
 		try {
@@ -43,6 +54,7 @@ public class ActionDriver {
 		}
 
 	}
+	
 
 	// method to get text
 	public String getText(By by) {
@@ -123,6 +135,17 @@ public class ActionDriver {
 			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
 		} catch (Exception e) {
 			System.out.println("Element is not visible : " + e.getMessage());
+		}
+	}
+	
+	//navigate Back
+	private void browserBackNavigation()
+	{
+		try {
+			driver.navigate().back();
+		} catch (Exception e) {
+			
+			System.out.println("Navigate the browser backward : " + e.getMessage());
 		}
 	}
 }

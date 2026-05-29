@@ -14,7 +14,9 @@ public class LoginPage {
 	private By passwordField = By.cssSelector("input[type='password']");
 	private By loginButton = By.cssSelector(".oxd-button");
 	private By errorMessage = By.cssSelector("p[class*='oxd-text oxd-text--p oxd-alert-content-text']");
-
+	private By emptyFieldRequiredError=By.cssSelector("span[class*='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']");
+	private By forgetPassword=By.cssSelector("p[class*='oxd-text oxd-text--p orangehrm-login-forgot-header']");
+	
 	//initialize the action driver object by passing webdriver instance
 	public LoginPage(WebDriver driver)
 	{
@@ -27,6 +29,12 @@ public class LoginPage {
 		actionDriver.enterText(userNameField, userName);
 		actionDriver.enterText(passwordField, password);
 		actionDriver.click(loginButton);
+	}
+	
+	//Method to validated the required error
+	public String requiredError()
+	{
+		return actionDriver.getText(emptyFieldRequiredError);
 	}
 	
 	//Method to check if the error mesage is displayed	
@@ -45,5 +53,11 @@ public class LoginPage {
 	public void verifyErrorMessage(String expectedError)
 	{
 		actionDriver.compareTwoText(errorMessage, expectedError);
+	}
+	
+	//navigate to forget password
+	public void navigateToForgetPassword()
+	{
+		actionDriver.click(forgetPassword);
 	}
 }
